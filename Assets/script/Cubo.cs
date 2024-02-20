@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cubo : MonoBehaviour
 {
     // Start is called before the first frame update
     public int puntos;
+    public Text textoPuntos;
     void Start()
     {
        puntos =0; 
@@ -17,9 +19,10 @@ public class Cubo : MonoBehaviour
         
     }
 
-    private void OnTiggerEnter(Collision c){
-        Debug.Log("Choque tipo tigger");
+    private void OnTriggerEnter(Collider c){
+        Debug.Log("Choque tipo trigger");
         puntos++;
+        textoPuntos.text = puntos.ToString();
     }
         
 }
